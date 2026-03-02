@@ -63,13 +63,34 @@ public class Asignatura {
     //RegistrarAsig
     class RegisAsig {
 
-    private ArrayList<Asignatura> lista = new ArrayList<>();
-    public void registrarAsignatura(Asignatura asignatura) {
-        lista.add(asignatura);
-        lista.add(new Asignatura(codigo, nombre, creditos, Docente));
-        System.out.println("Asignatura registrada: " + asignatura.getNombre());
+        private ArrayList<Asignatura> lista = new ArrayList<>();
+        
+        public void registrarAsignatura(Asignatura asignatura) {
+            lista.add(asignatura);
+            lista.add(new Asignatura(codigo, nombre, creditos, Docente));
+            System.out.println("Asignatura registrada: " + asignatura.getNombre());
         }
 
+        public void listarAsig() {
+            if (lista.isEmpty()) {
+                System.out.println("No se encuentran asignaturas registradas.");
+                return;
+            }
+            System.out.println("Lista de asignaturas registradas:");
+            for (Asignatura a : lista) {
+                System.out.println(a);
+            }
+        }
+
+        public Asignatura buscarAsignatura(String codigo) {
+            for (Asignatura a : lista) {
+                if (a.getCodigo().equals(codigo)) {
+                    return a;
+                }
+            }
+            System.out.println("No se encontro una asignatura con código: " + codigo);
+            return null;
+        }
     }
 
 }
