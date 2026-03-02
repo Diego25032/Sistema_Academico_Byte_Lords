@@ -154,4 +154,28 @@ public static void buscarNota() {
     
     System.out.println("No se encontró nota para ese estudiante y asignatura.");
 }
+
+public static void actualizarNota() {
+    System.out.println("\n--- ACTUALIZAR NOTA ---");
+    
+    System.out.print("Código del estudiante: ");
+    String codEst = sc.nextLine();
+    
+    System.out.print("Código de la asignatura: ");
+    String codAsig = sc.nextLine();
+    
+    for (Nota n : notas) {
+        if (n.getCodigoEstudiante().equals(codEst) && n.getCodigoAsignatura().equals(codAsig)) {
+            System.out.print("Nuevo valor de la nota: ");
+            double valor = sc.nextDouble();
+            sc.nextLine();
+            
+            n.setValorNota(valor);
+            System.out.println("Nota actualizada.");
+            return;
+        }
+    }
+    
+    System.out.println("No se encontró nota para ese estudiante y asignatura.");
+}
 }
