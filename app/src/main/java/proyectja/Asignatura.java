@@ -7,7 +7,7 @@ public class Asignatura {
     private int creditos;
     private String Docente;
 
-    //Constructor
+     //Constructor
     public Asignatura(String codigo, String nombre, int creditos, String Docente) {
         this.codigo = codigo;
         this.nombre = nombre;
@@ -15,7 +15,7 @@ public class Asignatura {
         this.Docente = Docente;
     }
 
-    //getter y setter
+     //getter y setter
     public String getCodigo() {
         return codigo;
     }
@@ -49,7 +49,7 @@ public class Asignatura {
         this.Docente = docente;
     }
 
-    //toString
+     //toString
     @Override
     public String toString() { 
         return "Asignatura {" +
@@ -60,7 +60,7 @@ public class Asignatura {
                 "\n}";
     }
 
-    //RegistrarAsig
+     //RegistrarAsig
     class RegisAsig {
 
         private ArrayList<Asignatura> lista = new ArrayList<>();
@@ -71,6 +71,7 @@ public class Asignatura {
             System.out.println("Asignatura registrada: " + asignatura.getNombre());
         }
 
+     //lista de asignaturas
         public void listarAsig() {
             if (lista.isEmpty()) {
                 System.out.println("No se encuentran asignaturas registradas.");
@@ -91,6 +92,20 @@ public class Asignatura {
             System.out.println("No se encontro una asignatura con código: " + codigo);
             return null;
         }
+     //Actualizar Asignatura
+        public void actualizarAsignatura(String codigo, String nuevoNombre, int nuevosCreditos, String nuevoDocente) {
+            for (Asignatura a : lista) {
+              if (a.getCodigo().equals(codigo)) {
+                 a.setNombre(nuevoNombre);
+                 a.setCreditos(nuevosCreditos);
+                 a.setDocente(nuevoDocente);
+                 System.out.println("Asignatura modifocada: " + a);
+                 return;
+                }
+            }
+            System.out.println("No se encontró asignatura con código: " + codigo);
+        }
+    
     }
 
 }
