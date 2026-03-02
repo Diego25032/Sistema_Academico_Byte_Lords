@@ -1,0 +1,12 @@
+[33mbc1f1b2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature/clase-asignatura-nota[m[33m, [m[1;31morigin/feature/clase-asignatura-nota[m[33m)[m feat: crear Main.java y organizar estructura
+[33m33b777c[m feat: implementar DELETE - eliminar asignatura
+[33m7f46d9a[m feat: implementar UPDATE - actualizar asignatura
+[33m4c1ffd5[m feat: implementar READ - listar y buscar asignatura
+[33m08b59fd[m feat: implementar CREATE - registrar asignatura
+[33m16551d8[m feat: completar clase Nota con toString
+[33m5f2cf02[m feat: agregar constructor y encapsulamiento a clase Nota
+[33m09de33a[m feat: crear clase Nota con atributos
+[33m7d406e0[m feat: agregar toString a clase Asignatura
+[33m3f292cf[m feat: agregar encapsulamiento a clase Asignatura
+[33me041112[m feat: crear clase Asignatura con atributos
+[33mfb77984[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/feature/menu-principal[m[33m, [m[1;31morigin/HEAD[m[33m)[m feat: inicializar proyecto Sistema_Academico_Byte_Lords
