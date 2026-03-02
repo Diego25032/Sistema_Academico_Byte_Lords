@@ -105,6 +105,18 @@ public class Asignatura {
             }
             System.out.println("No se encontró asignatura con código: " + codigo);
         }
+     
+     //Eliminar Asignatura
+        public void eliminarAsignatura(String codigo) {
+            for (Asignatura a : lista) {
+                if (a.getCodigo().equals(codigo)) {
+                    lista.remove(a);
+                    System.out.println("Asignatura eliminada: " + a);
+                    return;
+                }
+            }
+            System.out.println("No se encontro asignatura con codigo: " + codigo);
+        }
     
     }
 
