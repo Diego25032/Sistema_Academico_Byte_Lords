@@ -178,4 +178,25 @@ public static void actualizarNota() {
     
     System.out.println("No se encontró nota para ese estudiante y asignatura.");
 }
+
+public static void eliminarNota() {
+    System.out.println("\n--- ELIMINAR NOTA ---");
+    
+    System.out.print("Código del estudiante: ");
+    String codEst = sc.nextLine();
+    
+    System.out.print("Código de la asignatura: ");
+    String codAsig = sc.nextLine();
+    
+    for (int i = 0; i < notas.size(); i++) {
+        Nota n = notas.get(i);
+        if (n.getCodigoEstudiante().equals(codEst) && n.getCodigoAsignatura().equals(codAsig)) {
+            notas.remove(i);
+            System.out.println("Nota eliminada.");
+            return;
+        }
+    }
+    
+    System.out.println("No se encontró nota para ese estudiante y asignatura.");
+}
 }
