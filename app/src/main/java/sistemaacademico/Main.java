@@ -102,4 +102,23 @@ public static void eliminarAsignatura() {
     
     System.out.println("No se encontró asignatura con código: " + codigo);
 }
+// CREATE - Registrar nota (Actividad 7)
+public static void registrarNota() {
+    System.out.println("\n--- REGISTRAR NOTA ---");
+    
+    System.out.print("Código del estudiante: ");
+    String codEst = sc.nextLine();
+    
+    System.out.print("Código de la asignatura: ");
+    String codAsig = sc.nextLine();
+    
+    System.out.print("Valor de la nota: ");
+    double valor = sc.nextDouble();
+    sc.nextLine(); // limpiar buffer
+    
+    Nota nota = new Nota(codEst, codAsig, valor);
+    notas.add(nota);
+    
+    System.out.println("Nota registrada correctamente.");
+}
 }
