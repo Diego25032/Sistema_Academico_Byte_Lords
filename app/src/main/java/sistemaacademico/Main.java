@@ -13,7 +13,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Sistema funcionando");
     }
-    // CREATE - Registrar asignatura
+    
 public static void registrarAsignatura() {
     System.out.println("\n--- REGISTRAR ASIGNATURA ---");
     
@@ -25,14 +25,14 @@ public static void registrarAsignatura() {
     
     System.out.print("Créditos: ");
     int creditos = sc.nextInt();
-    sc.nextLine(); // limpiar buffer
+    sc.nextLine(); 
     
     Asignatura a = new Asignatura(codigo, nombre, creditos);
     asignaturas.add(a);
     
     System.out.println("Asignatura registrada correctamente.");
 }
-// READ - Listar asignaturas
+
 public static void listarAsignaturas() {
     System.out.println("\n--- LISTA DE ASIGNATURAS ---");
     
@@ -45,7 +45,7 @@ public static void listarAsignaturas() {
         System.out.println(a);
     }
 }
-// READ - Buscar asignatura por código
+
 public static void buscarAsignatura() {
     System.out.println("\n--- BUSCAR ASIGNATURA ---");
     
@@ -62,7 +62,7 @@ public static void buscarAsignatura() {
     
     System.out.println("No se encontró asignatura con código: " + codigo);
 }
-// UPDATE - Actualizar asignatura
+
 public static void actualizarAsignatura() {
     System.out.println("\n--- ACTUALIZAR ASIGNATURA ---");
     
@@ -85,7 +85,7 @@ public static void actualizarAsignatura() {
     
     System.out.println("No se encontró asignatura con código: " + codigo);
 }
-// DELETE - Eliminar asignatura
+
 public static void eliminarAsignatura() {
     System.out.println("\n--- ELIMINAR ASIGNATURA ---");
     
@@ -102,7 +102,7 @@ public static void eliminarAsignatura() {
     
     System.out.println("No se encontró asignatura con código: " + codigo);
 }
-// CREATE - Registrar nota (Actividad 7)
+
 public static void registrarNota() {
     System.out.println("\n--- REGISTRAR NOTA ---");
     
@@ -114,11 +114,44 @@ public static void registrarNota() {
     
     System.out.print("Valor de la nota: ");
     double valor = sc.nextDouble();
-    sc.nextLine(); // limpiar buffer
+    sc.nextLine(); 
     
     Nota nota = new Nota(codEst, codAsig, valor);
     notas.add(nota);
     
     System.out.println("Nota registrada correctamente.");
+}
+
+public static void listarNotas() {
+    System.out.println("\n--- LISTA DE NOTAS ---");
+    
+    if (notas.isEmpty()) {
+        System.out.println("No hay notas registradas.");
+        return;
+    }
+    
+    for (Nota n : notas) {
+        System.out.println(n);
+    }
+}
+
+public static void buscarNota() {
+    System.out.println("\n--- BUSCAR NOTA ---");
+    
+    System.out.print("Código del estudiante: ");
+    String codEst = sc.nextLine();
+    
+    System.out.print("Código de la asignatura: ");
+    String codAsig = sc.nextLine();
+    
+    for (Nota n : notas) {
+        if (n.getCodigoEstudiante().equals(codEst) && n.getCodigoAsignatura().equals(codAsig)) {
+            System.out.println("Nota encontrada:");
+            System.out.println(n);
+            return;
+        }
+    }
+    
+    System.out.println("No se encontró nota para ese estudiante y asignatura.");
 }
 }
